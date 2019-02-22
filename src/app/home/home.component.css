@@ -1,0 +1,40 @@
+.nav-color {
+    background-color:#233040;
+    color:rgb(211,211,211);
+}
+
+.borders {
+    border:1px solid black;
+   margin:0.5px;
+}
+
+.marginMore {
+    padding-top:500px;
+}
+
+.cart-info{
+    padding:0 20px;
+    font-size:1rem;
+    text-align:center;
+    border:2px solid black;
+    width:140px;
+    background-color:#233040;
+    color:white;
+}
+.cart-small{
+    padding:0 20px;
+    border:2px solid black;
+    width:78px;
+    text-align:start;
+    background-color:#233040;
+    color:white;
+}
+.cart-price {
+    padding:1.5px 20px;
+    border:2px solid black;
+    width:40px;
+    margin-left:5px;
+    text-align:start;
+    background-color:#233040;
+    color:white;
+}

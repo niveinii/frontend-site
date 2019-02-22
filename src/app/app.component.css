@@ -1,0 +1,13 @@
+.nav-color {
+    background-color:#233040;
+    color:rgb(211,211,211);
+}
+
+.borders {
+    border:1px solid black;
+   margin:0.5px;
+}
+
+.marginMore {
+    padding-top:500px;
+}
