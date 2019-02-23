@@ -4,7 +4,8 @@
       <div class="col-lg-4">
       </div>
       <div class="col-lg-4 pt-5">
-       <p>Quick Search     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span> <input type="text"></span>
+<input type="text" class="form-control" id="focused" placeholder="Describe your desired item" style="width:270px" [(ngModel)]="searchTerm">
+
       </div>
       <div class="col-lg-4 pt-5 pl-5">
    <p class="cart-info">Cart<span>&nbsp;&nbsp;Info</span></p>
@@ -12,44 +13,16 @@
       </div>
     </div>
   </div>
-
 <!--Items --->
-
-<div class="container pt-5">
-    <div class="row">
-        <div class="col-lg-2 borders"><b>Type</b></div>
-        <div class="col-lg-5 borders"><b>Description</b></div>
-        <div class="col-lg-2 borders"><b>Price</b></div>
-        <div class="col-lg-2 borders"><b>Add/Remove Item</b></div>
-      </div>
-  <div class="row">
-    <div class="col-lg-2 borders"><i class="fas fa-cookie-bite"> Dog Snacks</i></div>
-    <div class="col-lg-5 borders">Treat your dog with an awesome Cookie snack!</div>
-    <div class="col-lg-2 borders">50₪</div>
-    <div class="col-lg-2 borders">Add</div>
-  </div>
-  <div class="row">
-    <div class="col-lg-2 borders"><i class="fas fa-slash"> Leash</i></div>
-    <div class="col-lg-5 borders">Brand New Titanium Leash</div>
-    <div class="col-lg-2 borders">90₪</div>
-    <div class="col-lg-2 borders">Add</div>
-  </div>
-  <div class="row">
-    <div class="col-lg-2 borders"><i class="fas fa-dog"> Dog</i></div>
-    <div class="col-lg-5 borders">Two Month Years Old King Charles</div>
-    <div class="col-lg-2 borders">5,000₪</div>
-    <div class="col-lg-2 borders">Add</div>
-  </div>
-  <div class="row">
-    <div class="col-lg-2 borders"><i class="fas fa-baseball-ball"> Dog Toys</i></div>
-    <div class="col-lg-5 borders">Golf Ball, Item Made From Old Pepole Hair</div>
-    <div class="col-lg-2 borders">30₪</div>
-    <div class="col-lg-2 borders">Add</div>
-  </div>
-  <div class="row">
-      <div class="col-lg-2 borders"><i class="fas fa-cookie-bite"> Dog Snacks</i></div>
-    <div class="col-lg-5 borders">This Is Some Prime Salmon Snaks With Roasted Potatoes</div>
-    <div class="col-lg-2 borders">150₪</div>
-    <div class="col-lg-2 borders">Add</div>
-  </div>
-</div>
+<table class="table">
+  <th *ngFor="let header of head">{{header.picture}} </th>
+  <th *ngFor="let header of head">{{header.description}} </th>
+  <th *ngFor="let header of head">{{header.cost}} </th>
+  <th *ngFor="let header of head">{{header.checklist}} </th>
+  <tr *ngFor="let item of inventory | inventoryFilter:searchTerm">
+    <td class="row"><i class=" pl-4 {{item.picture}}"></i></td>    
+    <td>{{item.description}}</td>
+    <td>{{item.cost}}</td>
+    <td>{{item.checklist}}</td>
+  </tr>
+</table>

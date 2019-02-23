@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {INVENTORYLIST,HEADER} from '../mock-inventory'
 
 
 @Component({
@@ -7,10 +8,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
+inventory=INVENTORYLIST;
+head=HEADER;
+searchTerm: string; 
 
   constructor() { }
 
   ngOnInit() {
+
+    
   }
 
 }

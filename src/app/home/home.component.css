@@ -38,3 +38,8 @@
     background-color:#233040;
     color:white;
 }
+
+#searchBox {
+    width:220px;
+    border-radius: 2%;
+}
