@@ -4,8 +4,7 @@
       <div class="col-lg-4">
       </div>
       <div class="col-lg-4 pt-5">
-<input type="text" class="form-control" id="focused" placeholder="Describe your desired item" style="width:270px" [(ngModel)]="searchTerm">
-
+       <p>Quick Search     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span> <input [(ngModel)]="searchTerm" id="searchBox" placeholder="Describe what you want" type="text"></span>
       </div>
       <div class="col-lg-4 pt-5 pl-5">
    <p class="cart-info">Cart<span>&nbsp;&nbsp;Info</span></p>
@@ -19,10 +18,11 @@
   <th *ngFor="let header of head">{{header.description}} </th>
   <th *ngFor="let header of head">{{header.cost}} </th>
   <th *ngFor="let header of head">{{header.checklist}} </th>
-  <tr *ngFor="let item of inventory | inventoryFilter:searchTerm">
+  <tr *ngFor="let item of inventory | inventoryFilter:searchTerm | paginate: { itemsPerPage: 5, currentPage: p }" class="box">
     <td class="row"><i class=" pl-4 {{item.picture}}"></i></td>    
     <td>{{item.description}}</td>
     <td>{{item.cost}}</td>
     <td>{{item.checklist}}</td>
   </tr>
 </table>
+<pagination-controls (pageChange)="p = $event"></pagination-controls>

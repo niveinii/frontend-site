@@ -11,6 +11,7 @@ export class HomeComponent implements OnInit {
 inventory=INVENTORYLIST;
 head=HEADER;
 searchTerm: string; 
+p:number=1;
 
   constructor() { }
 

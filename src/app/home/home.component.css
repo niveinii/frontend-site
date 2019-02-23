@@ -41,5 +41,22 @@
 
 #searchBox {
     width:220px;
-    border-radius: 2%;
+    background-repeat: no-repeat;
+}
+
+
+
+
+        
+
+.box {
+    background-size: 100% 200%;
+    background-image: linear-gradient(to bottom, white 50%,#28A745 50%);
+
+    transition: background-position 0.8s;
+}
+
+.box:hover {
+    background-position:-70% -100%;
+    color:white
 }

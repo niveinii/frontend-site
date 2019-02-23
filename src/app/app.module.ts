@@ -7,6 +7,7 @@ import { AboutComponent } from './about/about.component';
 import { ContactComponent } from './contact/contact.component';
 import {FormsModule} from '@angular/forms'
 import { InventoryFilterPipe } from './home/inventory-filter.pipe';
+import {NgxPaginationModule} from 'ngx-pagination'; 
 @NgModule({
   declarations: [
     AppComponent,
@@ -18,6 +19,7 @@ import { InventoryFilterPipe } from './home/inventory-filter.pipe';
   ],
   imports: [
     BrowserModule,
+    NgxPaginationModule,
     AppRoutingModule,
     FormsModule
   ],
