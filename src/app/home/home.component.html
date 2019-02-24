@@ -5,11 +5,11 @@
     </div>
     <div class="col-lg-4 pt-5">
       <p>Quick Search &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span> <input [(ngModel)]="searchTerm" id="searchBox"
-            placeholder="Describe what you want" type="text"></span>
+            placeholder=" Describe what you want" type="text"></span>
     </div>
     <div class="col-lg-4 pt-5 pl-5">
       <p class="cart-info">Cart<span>&nbsp;&nbsp;Info</span></p>
-      <p class="cart-small">0&nbsp;Items<span class="cart-price">&nbsp;0$</span></p>
+      <p class="cart-small"><span>{{numberOfItems}}&nbsp;</span>Items<span class="cart-price">&nbsp;{{costSum}}$</span></p>
     </div>
   </div>
 </div>
@@ -24,7 +24,7 @@
     <td class="p-3 boldMe"><i class="{{item.picture}}"></i></td>
     <td class="p-3 boldMe">{{item.description}}</td>
     <td class="p-3 boldMe">{{item.cost}}</td>
-    <td class="p-3 boldMe" (click)="addPrice()">{{item.checklist}}</td>
+    <td class="p-3 boldMe" (click)="addPrice(item)">{{item.checklist}}</td>
   </tr>
 </table>
 <div id="pagination">

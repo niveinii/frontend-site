@@ -1,5 +1,5 @@
 body{
-   background-color: #F7F7F7;
+   background-color: #EFEFEF;
 }
 .nav-color {
     background-color:#314652;
@@ -54,7 +54,7 @@ body{
       margin-top:50px;
   }
   #tweet{
-      background-color:#77BDF1;
+      background-color:#444444;
   }
 
   #google {
@@ -68,7 +68,6 @@ body{
   #linkedin {
       background-color:#3395C4;
   }
-  @import url(http://fonts.googleapis.com/css?family=Open+Sans:700);
 #cssmenu {
   background: #f96e5b;
   width: auto;
