@@ -12,10 +12,15 @@ inventory=INVENTORYLIST;
 head=HEADER;
 searchTerm: string; 
 p:number=1;
+addPrice () {
+
+}
 
   constructor() { }
 
+
   ngOnInit() {
+
 
     
   }

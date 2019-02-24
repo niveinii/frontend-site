@@ -1,6 +1,7 @@
 .nav-color {
-    background-color:#233040;
+    background-color:#33B5E5;
     color:rgb(211,211,211);
+    opacity: 0.1;
 }
 
 .borders {
@@ -18,7 +19,7 @@
     text-align:center;
     border:2px solid black;
     width:140px;
-    background-color:#233040;
+    background-color:#5DB2DE;
     color:white;
 }
 .cart-small{
@@ -26,7 +27,7 @@
     border:2px solid black;
     width:78px;
     text-align:start;
-    background-color:#233040;
+    background-color:#5DB2DE;
     color:white;
 }
 .cart-price {
@@ -35,7 +36,7 @@
     width:40px;
     margin-left:5px;
     text-align:start;
-    background-color:#233040;
+    background-color:#5DB2DE;
     color:white;
 }
 
@@ -59,4 +60,15 @@
 .box:hover {
     background-position:-70% -100%;
     color:white
+}
+
+.boldMe {
+    font-family: 'Titillium Web', sans-serif;
+    font-weight:400;
+    font-size:16px;
+}
+ 
+#pagination {
+    text-align:center;
+    font-size: 20px;
 }
