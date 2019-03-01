@@ -8,9 +8,15 @@ import { Component, OnInit } from '@angular/core';
 export class ContactComponent implements OnInit {
 
   constructor() { }
+submitted=false;
+  onSubmit(d){
+    this.submitted = true;
+    console.log(d)
+  }
 
   ngOnInit() {
     
   }
 
 }
+

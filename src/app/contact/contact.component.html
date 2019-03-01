@@ -1,1 +1,22 @@
-<p>contact</p>
+<div class="container">
+    <form (ngSubmit)="onSubmit(myForm)" #myForm="ngForm">
+        <br>
+        <p>Your Name<span class="mendatory">*</span></p>
+        <input #username="ngModel" ngModel class="form-control" type="text" name="username" required>
+        <p *ngIf="!username.valid && username.touched" style="color:red">please enter a valid name</p>
+        <br>
+        <p>Your Email<span class="mendatory">*</span></p>
+        <input #email="ngModel" ngModel class="form-control" type="text" required email name="email">
+        <p *ngIf="!email.valid && email.touched" style="color:red">please enter a valid mail</p>
+        <br>
+        <p>Your Comment</p>
+        <textarea ngModel name="comment" id="comment" cols="47" rows="5"></textarea>
+        <span><label *ngIf="submitted" style="padding-left:500px;" class="animated jello"><img style="height:140px" src="http://www.pngall.com/wp-content/uploads/2016/07/Success-Transparent-180x180.png" alt=""></label></span>
+        <br>
+        <br>
+        <br>
+        <br>
+        <button style="font-size:20px" [disabled]="!myForm.valid" type="submit">Submit</button>
+        
+    </form>
+</div>

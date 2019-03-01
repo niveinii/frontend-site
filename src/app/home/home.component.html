@@ -9,24 +9,29 @@
     </div>
     <div class="col-lg-4 pt-5 pl-5">
       <p class="cart-info">Cart<span>&nbsp;&nbsp;Info</span></p>
-      <p class="cart-small"><span>{{numberOfItems}}&nbsp;</span>Items<span class="cart-price">&nbsp;{{costSum}}$</span></p>
+      <p class="cart-small"><span>{{numberOfItems}}&nbsp;</span>Items<span class="cart-price">&nbsp;{{costSum}}$</span>
+      </p>
     </div>
   </div>
 </div>
+
 <!--Items Table --->
-<table class="table">
-  <th *ngFor="let header of head">{{header.picture}} </th>
-  <th *ngFor="let header of head">{{header.description}} </th>
-  <th *ngFor="let header of head">{{header.cost}} </th>
-  <th *ngFor="let header of head">{{header.checklist}} </th>
-  <tr *ngFor="let item of inventory | inventoryFilter:searchTerm | paginate: { itemsPerPage: 5, currentPage: p }"
-    class="box">
+<table class="table table-hover" *ngFor="let header of head">
+  <th>{{header.picture}} </th>
+  <th>{{header.description}} </th>
+  <th>{{header.cost}} </th>
+  <th>{{header.quantity}} </th>
+  <th>{{header.checklist}} </th>
+  <tr *ngFor="let item of inventory | inventoryFilter:searchTerm | paginate: { itemsPerPage: 5, currentPage: p }">
     <td class="p-3 boldMe"><i class="{{item.picture}}"></i></td>
     <td class="p-3 boldMe">{{item.description}}</td>
     <td class="p-3 boldMe">{{item.cost}}</td>
-    <td class="p-3 boldMe" (click)="addPrice(item)">{{item.checklist}}</td>
+    <td class="p-3 boldMe"><input class="shortWidth" type="number" #f value="{{item.quantity}}"><span>&nbsp;&nbsp;x{{item.quantity}}</span></td>
+    <td class="p-3 boldMe" (click)="valueToNumber(f)" (click)="addPrice(item)" class="button"><button
+        class="btn btn-outline-primary" (click)="clickEvent()">{{item.checklist}}</button></td>
   </tr>
 </table>
 <div id="pagination">
-    <pagination-controls (pageChange)="p = $event"></pagination-controls>
+  <pagination-controls (pageChange)="p = $event"></pagination-controls>
 </div>
+

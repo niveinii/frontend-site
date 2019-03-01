@@ -1,3 +1,5 @@
-.hi {
-    color:black;
+.mendatory {
+    color:red;
+    float:right;
+    font-size:25px;
 }

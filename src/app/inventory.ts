@@ -3,6 +3,7 @@ export class Inventory {
     description:string;
     cost:any;
     checklist:string;
+    quantity:number;
 }
 
 export class Header {
@@ -10,6 +11,7 @@ export class Header {
     description:string;
     cost:any;
     checklist:string;
+    quantity:any;
 }
 
 
