@@ -11,12 +11,15 @@
         <br>
         <p>Your Comment</p>
         <textarea ngModel name="comment" id="comment" cols="47" rows="5"></textarea>
-        <span><label *ngIf="submitted" style="padding-left:500px;" class="animated jello"><img style="height:140px" src="http://www.pngall.com/wp-content/uploads/2016/07/Success-Transparent-180x180.png" alt=""></label></span>
+        <br>
+        <br>
+        <span *ngIf="submitted" class="fade-in alert alert-success">
+            <strong>Success! </strong> Thank your for contacting us! Message send successfully.</span>
         <br>
         <br>
         <br>
         <br>
-        <button style="font-size:20px" [disabled]="!myForm.valid" type="submit">Submit</button>
+        <button class="hvr-grow" style="font-size:20px" [disabled]="!myForm.valid" type="submit">Submit</button>
         
     </form>
 </div>

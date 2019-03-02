@@ -69,7 +69,6 @@ body{
       background-color:#3395C4;
   }
 #cssmenu {
-  background: #4F78A4;
   width: auto;
   height:50px;
   opacity: 0.9;
@@ -102,7 +101,8 @@ body{
   text-align: center;
 }
 #cssmenu ul li a {
-  color: #ffffff;
+
+  color:black;  
   text-decoration: none;
   display: block;
   padding: 15px 25px;
