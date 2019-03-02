@@ -24,12 +24,12 @@ export class HomeComponent implements OnInit {
   addPrice(a: any) {
     if (a.checklist === "Add To Cart" && this.currentInput>=0) {
       this.costSum = (a.cost * this.currentInput) + this.costSum;
-      a.checklist = "Remove From Cart";
+      a.checklist = "Remove Item";
       this.numberOfItems = + this.numberOfItems + this.currentInput;
       a.quantity = a.quantity + this.currentInput;
 
     }
-    else if (a.checklist === "Remove From Cart" && a.quantity >= this.currentInput && this.currentInput>=0) {
+    else if (a.checklist === "Remove Item" && a.quantity >= this.currentInput && this.currentInput>=0) {
       this.costSum = this.costSum - (a.cost * this.currentInput);
       a.checklist = "Add To Cart"
       this.numberOfItems = + this.numberOfItems - this.currentInput;

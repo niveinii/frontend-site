@@ -107,9 +107,9 @@ body{
   display: block;
   padding: 15px 25px;
   font-family: 'Open Sans', sans-serif;
-  font-weight: 700;
+  font-weight: 600;
   text-transform: uppercase;
-  font-size: 20px;
+  font-size: 15.4px;
   position: relative;
   -webkit-transition: color .25s;
   -moz-transition: color .25s;
@@ -167,10 +167,7 @@ body{
   display: none;
 }
 @media screen and (max-width: 768px) {
-  #cssmenu ul li {
-    float: none;
-    display: block;
-  }
+
   #cssmenu ul li a {
     width: 100%;
     -moz-box-sizing: border-box;
@@ -195,7 +192,6 @@ body{
 .x-navbar {
   border: none;
   box-shadow: none;
-  transition: background 5s ease-out;
   background: transparent!important;
   position: fixed;
   z-index: 1030;
@@ -233,3 +229,4 @@ body{
 .entry-content {
   margin-top: 0;
 }
+
