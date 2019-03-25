@@ -1,9 +1,13 @@
 <br>
 <br>
-<br>
+<h1>Contact Us</h1>
 <div class="container">
     <form (ngSubmit)="onSubmit(myForm)" #myForm="ngForm">
         <br>
+        <div style="position: absolute" *ngIf="submitted" class="success-msg animated fadeInRight">
+            <i class="fa fa-check"></i>
+            This is a success message.
+          </div>
         <p>Your Name<span class="mendatory">*</span></p>
         <input #username="ngModel" ngModel class="form-control" type="text" name="username" required>
         <p *ngIf="!username.valid && username.touched" style="color:red">please enter a valid name</p>
@@ -17,7 +21,7 @@
         <br>
         <br>
         <span *ngIf="submitted" class="fade-in alert alert-success">
-            <strong>Success! </strong> Thank your for contacting us! Message send successfully.</span>
+            <strong>Success! </strong> Thank your for contacting us! Message sent successfully.</span>
         <br>
         <br>
         <br>
@@ -25,4 +29,6 @@
         <button class="hvr-grow" style="font-size:20px" [disabled]="!myForm.valid" type="submit">Submit</button>
         
     </form>
+
+          
 </div>

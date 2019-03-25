@@ -8,6 +8,8 @@ import { ContactComponent } from './contact/contact.component';
 import {FormsModule} from '@angular/forms'
 import { InventoryFilterPipe } from './home/inventory-filter.pipe';
 import {NgxPaginationModule} from 'ngx-pagination'; 
+import {HttpClientModule} from '@angular/common/http';
+import {AgmCoreModule} from '@agm/core';
 @NgModule({
   declarations: [
     AppComponent,
@@ -21,7 +23,9 @@ import {NgxPaginationModule} from 'ngx-pagination';
     BrowserModule,
     NgxPaginationModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule,
+    AgmCoreModule.forRoot({apiKey:''})
   ],
   providers: [],
   bootstrap: [AppComponent]

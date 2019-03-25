@@ -46,12 +46,12 @@
   <div class="row">
     <div class="col-lg-2">
     </div>
-    <div class="col-lg-6 pl-4 pr-5 pt-5">
+    <div class="col-lg-8 pl-4 pr-5 pt-5">
 <input class="form-control borders animated bounceInLeft delay-1s" id="searchBox" placeholder=" Describe what you want" type="text" [(ngModel)]="searchTerm">
     </div>
     <div class="col-lg-2 pt-5">
       <p class="cart-info animated fadeInRight delay-1s">Cart Info</p>
-      <p class="cart-small animated fadeInLeft delay-1s">{{numberOfItems}}&nbsp;Items | {{costSum}} ₪</p>
+      <p class="cart-small animated fadeInLeft delay-1s">{{itemStorage||0}}&nbsp;Items | {{costStorage||0}} ₪</p>
     </div>
   </div>
 </div>
@@ -62,14 +62,16 @@
   <th>{{header.description}} </th>
   <th>{{header.cost}} </th>
   <th>{{header.quantity}} </th>
+  <th>Total Amount</th>
   <th>{{header.checklist}} </th>
   <tr *ngFor="let item of inventory | inventoryFilter:searchTerm | paginate: { itemsPerPage: 5, currentPage: p }">
     <td class="p-3 boldMe"><i class="{{item.picture}}"></i></td>
     <td class="p-3 boldMe">{{item.description}}</td>
-    <td class="p-3 boldMe">{{item.cost}}</td>
-    <td class="p-3 boldMe"><input class="shortWidth" type="number" #f value="{{item.quantity}}"><span>&nbsp;&nbsp;x{{item.quantity}}</span></td>
+    <td class="p-3 boldMe">{{item.cost}} ₪</td>
+    <td class="p-3 boldMe"><input class="shortWidth" type="number" #f value="{{item.quantity}}" min="0"></td>
+    <td class="p-3 pl-5 boldMe">{{item.quantity}}</td>
     <td class="p-3 boldMe" (click)="valueToNumber(f)" (click)="addPrice(item)" class="button"><button
-        class="btn btn-outline-primary hvr-back-pulse" (click)="clickEvent()">{{item.checklist}}</button></td>
+        class="btn btn-outline-primary hvr-back-pulse">{{item.checklist}}</button></td>
   </tr>
 </table>
 <div id="pagination">
