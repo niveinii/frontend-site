@@ -12,20 +12,23 @@
         <div class="carousel-caption d-none d-md-block">
           <h5 class="fonter" style="font-weight: 800">Energy Snacks, now on sale</h5>
           <p>We will take care of your sleepy dog with some energetic cookies.</p>
-          <button class="btn btn-outline-secondary m-1 hvr-grow">More Details</button><span><button class="hvr-grow m-1 btn btn-danger">GET IT</button></span>
+          <button class="btn btn-outline-secondary m-1 hvr-grow">More Details</button><span><button
+              class="hvr-grow m-1 btn btn-danger">GET IT</button></span>
         </div>
       </div>
       <div class="carousel-item">
-        <img src='https://www.countrycommunities.com/wp-content/uploads/2018/09/cat-and-dog-1200x480.jpg' class="d-block w-100" alt="...">
+        <img src='https://www.countrycommunities.com/wp-content/uploads/2018/09/cat-and-dog-1200x480.jpg'
+          class="d-block w-100" alt="...">
         <div class="carousel-caption d-none d-md-block">
           <h5>Our Food Will Make Your Dog Cuddly</h5>
           <p>Our products are only made out of human fecies and pee only.</p>
         </div>
       </div>
       <div class="carousel-item">
-        <img src="http://regalpethealth.com/wp-content/uploads/2013/11/courtney-clayton-352885-unsplash-1200x480.jpg" class="d-block w-100" alt="...">
+        <img src="http://regalpethealth.com/wp-content/uploads/2013/11/courtney-clayton-352885-unsplash-1200x480.jpg"
+          class="d-block w-100" alt="...">
         <div class="carousel-caption d-none d-md-block">
-          <h5 style="color:black" >Hydrate your dog with body armor.</h5>
+          <h5 style="color:black">Hydrate your dog with body armor.</h5>
           <p style="color:black">Buy more useless products to fund my obsessions.</p>
         </div>
       </div>
@@ -47,31 +50,41 @@
     <div class="col-lg-2">
     </div>
     <div class="col-lg-8 pl-4 pr-5 pt-5">
-<input class="form-control borders animated bounceInLeft delay-1s" id="searchBox" placeholder=" Describe what you want" type="text" [(ngModel)]="searchTerm">
+      <input class="form-control borders animated bounceInLeft delay-1s" id="searchBox"
+        placeholder=" Describe what you want" type="text" [(ngModel)]="searchTerm">
     </div>
     <div class="col-lg-2 pt-5">
       <p class="cart-info animated fadeInRight delay-1s">Cart Info</p>
-      <p class="cart-small animated fadeInLeft delay-1s">{{itemStorage||0}}&nbsp;Items | {{costStorage||0}} ₪</p>
+      <p class="cart-small animated fadeInLeft delay-1s">{{numberOfItems||0}}&nbsp;Items | {{costSum||0}} ₪</p>
+      <div class="text-center">
+        <button class="btn btn-danger btn-sm" (click)="clearCart()">Clear Cart</button>
+        <button class="btn btn-primary btn-sm" (click)="sendToCart()" [routerLink]='["/check-out"]'>Procceed to Checkout</button>
+      </div>
     </div>
   </div>
 </div>
 
 <!--Items Table --->
-<table class="table table-hover" *ngFor="let header of head">
-  <th>{{header.picture}} </th>
-  <th>{{header.description}} </th>
-  <th>{{header.cost}} </th>
-  <th>{{header.quantity}} </th>
+<table class="table table-hover">
+  <th>Picture</th>
+  <th>Description</th>
+  <th>Cost</th>
+  <th>Quantity</th>
   <th>Total Amount</th>
-  <th>{{header.checklist}} </th>
-  <tr *ngFor="let item of inventory | inventoryFilter:searchTerm | paginate: { itemsPerPage: 5, currentPage: p }">
-    <td class="p-3 boldMe"><i class="{{item.picture}}"></i></td>
-    <td class="p-3 boldMe">{{item.description}}</td>
-    <td class="p-3 boldMe">{{item.cost}} ₪</td>
-    <td class="p-3 boldMe"><input class="shortWidth" type="number" #f value="{{item.quantity}}" min="0"></td>
-    <td class="p-3 pl-5 boldMe">{{item.quantity}}</td>
-    <td class="p-3 boldMe" (click)="valueToNumber(f)" (click)="addPrice(item)" class="button"><button
-        class="btn btn-outline-primary hvr-back-pulse">{{item.checklist}}</button></td>
+  <th>Total Cost</th>
+  <th>Add/Remove From Cart</th>
+  <tr *ngFor="let product of products | inventoryFilter:searchTerm | paginate: { itemsPerPage: 5, currentPage: p }">
+      <td class="p-3 boldMe"><i class="{{product.picture}}"></i></td>
+      <td class="p-3 boldMe">{{product.description}}</td>
+      <td class="p-3 boldMe">{{product.cost}} ₪</td>
+    <td class="p-3 boldMe"><input class="shortWidth" type="number" #f value="{{product.quantity}}" min="0"></td>
+    <td class="p-3 pl-5 boldMe">{{product.totalAmount}}</td>
+    <td class="p-3 pl-5 boldMe">{{product.totalCost}}</td>
+    <!-- <td class="p-3 boldMe" (click)="valueToNumber(f)" (click)="addPrice(item)" class="button"><button -->
+    <td class="p-3 boldMe">
+      <button (click)="sumCostAndNumOfItems(product, f.value)" class="btn btn-outline-primary hvr-back-pulse">{{product.addItem}}</button>
+      <button style="margin-left:10px" class="btn btn-outline-danger hvr-back-pulse" (click)="removeItemsFromCart(product, f.value)">{{product.removeItem}}</button>
+    </td>
   </tr>
 </table>
 <div id="pagination">

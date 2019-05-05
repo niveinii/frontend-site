@@ -192,12 +192,14 @@ body{
 .x-navbar {
   border: none;
   box-shadow: none;
-  background: transparent!important;
   position: fixed;
   z-index: 1030;
   top: 0;
   left: 0;
   right: 0;
+  opacity: 0.85;
+  box-shadow: 0 0.15em 0.35em 0 rgba(0,0,0,0.135);
+
 }
 
 /** this is where you can set the background color of your header after it passes the hero image **/
@@ -205,7 +207,7 @@ body{
 .x-navbar.pasthero {
     border-bottom: 1px solid #ccc;
     background-color: #fff!important;
-    box-shadow: 0 0.15em 0.35em 0 rgba(0,0,0,0.135);
+    box-shadow: 0.90rem 0.15em 0.35em 0 rgba(0,0,0,0.135);
     -webkit-transform: translate3d(0, 0, 0);
     -ms-transform: translate3d(0, 0, 0);
     transform: translate3d(0, 0, 0);
